@@ -1,9 +1,8 @@
-import jdk.jfr.SettingControl;
+package test;
 
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import java.util.Comparator;
 
 public class Edge implements Comparable<Edge> {
     public static Set<Set<Node>> allEdges = new HashSet<Set<Node>>();
@@ -47,7 +46,7 @@ public class Edge implements Comparable<Edge> {
 
     @Override
     public String toString() {
-        return "Edge{" +
+        return "test.Edge{" +
                 "nodes=" + nodes.toString() +
                 ", weight=" + weight +
                 '}';

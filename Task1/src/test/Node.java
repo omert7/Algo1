@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+package test;
+
 import java.util.Objects;
 import java.util.PriorityQueue;
 
@@ -28,7 +29,7 @@ public class Node {
 
     @Override
     public String toString() {
-        return "Node id= " + id;
+        return "test.Node id= " + id;
     }
 
 

@@ -1,5 +1,6 @@
+package test;
+
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.PriorityQueue;
 
 public class Graph {
@@ -48,20 +49,20 @@ public class Graph {
 
     @Override
     public String toString() {
-        return "Graph{" +
+        return "test.Graph{" +
                 "nodes=" + nodes +
                 ", edges=" + edges +
                 '}';
     }
 
-//    public PriorityQueue<Edge> cutWithGraph(Graph g) {
+//    public PriorityQueue<test.Edge> cutWithGraph(test.Graph g) {
 //
-//        PriorityQueue<Edge> pq = new PriorityQueue<Edge>(1, (e1, e2) -> e1.weight - e2.weight);
+//        PriorityQueue<test.Edge> pq = new PriorityQueue<test.Edge>(1, (e1, e2) -> e1.weight - e2.weight);
 //
-//        for (Edge e : g.edges) {
+//        for (test.Edge e : g.edges) {
 //            Object[] arr = e.nodes.toArray();
-//            Node n1 = (Node) arr[0];
-//            Node n2 = (Node) arr[1];
+//            test.Node n1 = (test.Node) arr[0];
+//            test.Node n2 = (test.Node) arr[1];
 //            if (this.nodes.contains(n1) && !this.nodes.contains(n2) || this.nodes.contains(n2) && !this.nodes.contains(n1)) {
 //                if (!this.edges.contains(e) && !pq.contains(e)) {
 //                    pq.add(e);
@@ -109,7 +110,7 @@ public class Graph {
 //            System.out.println("@@@@@@@@@@@@");
 //            System.out.println();
 
-//            PriorityQueue<Edge> pq = minGraph.cutWithGraph(this);
+//            PriorityQueue<test.Edge> pq = minGraph.cutWithGraph(this);
 
 //            System.out.println("###############");
 //            System.out.println(pq);
@@ -117,7 +118,7 @@ public class Graph {
 //            System.out.println();
 
 //            try {
-//                Edge e = pq.poll();
+//                test.Edge e = pq.poll();
 //                while (minGraph.edges.contains(e)) {
 //                    e = pq.poll();
 //                }

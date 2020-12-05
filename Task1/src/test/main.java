@@ -1,3 +1,5 @@
+package test;
+
 import java.util.*;
 
 public class main {
@@ -12,16 +14,16 @@ public class main {
 
         Graph myGraph = new Graph(nodes, edges);
         Graph minGraph =  myGraph.PrimMinGraph();
-        System.out.println("Original Graph: ");
+        System.out.println("Original test.Graph: ");
         System.out.println(myGraph);
         System.out.println("MinSpanGraph: ");
         System.out.println(minGraph);
 
-        //        PriorityQueue<Edge> e1 = new PriorityQueue<>(edges);
-//        PriorityQueue<Edge> e1_b = new PriorityQueue<>();
+        //        PriorityQueue<test.Edge> e1 = new PriorityQueue<>(edges);
+//        PriorityQueue<test.Edge> e1_b = new PriorityQueue<>();
 //        System.out.println(e1.size());
 //        while(e1.size()>0){
-//            Edge e = e1.poll();
+//            test.Edge e = e1.poll();
 //
 //            e1_b.add(e);
 //        }

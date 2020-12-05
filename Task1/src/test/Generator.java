@@ -1,3 +1,5 @@
+package test;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
@@ -16,7 +18,7 @@ public class Generator {
     }
 
     public static ArrayList<Edge> generateEdges(ArrayList<Node> nodes, int numOfEdges) {
-        /* This Method Generate edges and return ArrayList<Edge> */
+        /* This Method Generate edges and return ArrayList<test.Edge> */
         ArrayList<Edge> edges = new ArrayList<Edge>();
         Set<Set<Integer>> indexes = generateIndexes(nodes.size(), numOfEdges); // generating indexes
 
