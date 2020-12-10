@@ -1,43 +1,18 @@
 package test;
 
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 public class Edge implements Comparable<Edge> {
-    public static Set<Set<Node>> allEdges = new HashSet<Set<Node>>();
     Set<Node> nodes;
     int weight;
 
 
     public Edge(Node n1, Node n2, int weight) {
-        this.nodes = getSetOfNodes(n1, n2);
-        this.weight = weight;
-        addEdgeToNodes(n1, n2);
-        allEdges.add(this.nodes);
-    }
-
-    public void addEdgeToNodes(Node n1, Node n2) {
-        n1.addEdge(this);
-        n2.addEdge(this);
-
-    }
-
-    public static Set<Node> getSetOfNodes(Node n1, Node n2) {
-        Set<Node> setOfNodes = new HashSet<Node>();
-        setOfNodes.add(n1);
-        setOfNodes.add(n2);
-        return setOfNodes;
-    }
-
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
+        this.nodes = Node.getSetOfNodes(n1, n2);
         this.weight = weight;
     }
+
 
     @Override
     public int compareTo(Edge o) {
@@ -51,6 +26,7 @@ public class Edge implements Comparable<Edge> {
                 ", weight=" + weight +
                 '}';
     }
+
 
     @Override
     public boolean equals(Object o) {
