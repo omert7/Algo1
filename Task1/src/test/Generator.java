@@ -1,4 +1,5 @@
 package test;
+
 /* Generator Class to generate indexes for the graph */
 
 import java.util.ArrayList;

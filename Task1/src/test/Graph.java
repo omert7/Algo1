@@ -1,14 +1,19 @@
 package test;
-
+/* Graph class to represent a graph with Nodes and Edges.
+* Nodes are listed in ArrayList and Edges are in a map so we can easily find an edge by a set of nodes.
+* and a name just cause why not :)
+* */
 import java.util.*;
 
 public class Graph {
     ArrayList<Node> nodes;
     Map<Set<Node>, Edge> edgesMap;
+    String name;
 
-    public Graph(ArrayList<Node> nodes, ArrayList<Edge> edges) {
+    public Graph(ArrayList<Node> nodes, ArrayList<Edge> edges, String name) {
         this.edgesMap = new HashMap<>();
         this.nodes = nodes;
+        this.name = name;
         for (Edge e : edges) {
             addEdgeToMap(e);
         }
@@ -28,8 +33,8 @@ public class Graph {
         }
     }
 
-    public void clearNodesNeigbours(){
-        for(Node n: nodes){
+    public void clearNodesNeigbours() {
+        for (Node n : nodes) {
             n.neighbours.clear();
         }
     }
@@ -52,13 +57,12 @@ public class Graph {
 
     @Override
     public String toString() {
-        return "test.Graph{" +
-                "nodes=" + nodes +
-                ", edges=" + this.edgesMap.values() +
-                '}';
+        return this.name + " Graph = {" + "nodes=" + nodes + ", edges=" + this.edgesMap.values() + '}';
     }
 
-    public Graph PrimMinGraph() {
+    public Graph createMstUsingPrim() {
+        // using prim algo to create a min graph out of 'this' graph
+        // using priorityQueue and add edges/nodes to the mst graph
 
         ArrayList<Node> minNodes = new ArrayList<>();
         ArrayList<Edge> minEdges = new ArrayList<>();
@@ -66,7 +70,7 @@ public class Graph {
         Node firstNode = this.nodes.get(0);
         minNodes.add(firstNode);
 
-        Graph minGraph = new Graph(minNodes, minEdges);
+        Graph minGraph = new Graph(minNodes, minEdges, "MST");
         PriorityQueue<Edge> pq = new PriorityQueue<>(this.edgesMap.values());
         PriorityQueue<Edge> pq_b = new PriorityQueue<>();
 
@@ -78,7 +82,9 @@ public class Graph {
                 Node n1 = (Node) arr[0];
                 Node n2 = (Node) arr[1];
 
-                if (minGraph.nodes.contains(n1) && !minGraph.nodes.contains(n2) || minGraph.nodes.contains(n2) && !minGraph.nodes.contains(n1)) {
+                if (minGraph.nodes.contains(n1) && !minGraph.nodes.contains(n2) ||
+                        minGraph.nodes.contains(n2) && !minGraph.nodes.contains(n1)) {
+
                     minGraph.addNodeIfNotIn(n1);
                     minGraph.addNodeIfNotIn(n2);
                     minGraph.addEdgeToGraph(e);
@@ -137,11 +143,11 @@ public class Graph {
 
     }
 
-    public void breakCircleUsingDfs() {
+    public void removeRedundantEdgeMst() {
         /* this method finds using dfs search to look for circle and if found, it breaks it by removing
          the heaviest edge from the graph */
 
-        // init all Nodes neigbours
+        // init all Nodes neighbours
         this.initNodesNeigbours();
 
         // coloring all nodes in white

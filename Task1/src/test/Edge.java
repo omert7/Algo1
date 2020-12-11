@@ -1,5 +1,9 @@
 package test;
 
+/* Edge class, represents an edge in a Graph.
+*  each edge has a set of nodes 'nodes' that represents the nodes connected with that edge
+*  and 'weight' that represents the edge weight in the graph */
+
 import java.util.Objects;
 import java.util.Set;
 
@@ -15,6 +19,7 @@ public class Edge implements Comparable<Edge> {
 
 
     @Override
+    // comparing edges by weight for the priority queue
     public int compareTo(Edge o) {
         return this.weight - o.weight;
     }
