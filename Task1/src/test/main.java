@@ -35,7 +35,7 @@ public class main {
         System.out.println("GRAPH AFTER ADDING " + edgeName + " EDGE");
         System.out.println(mst);    // printing the graph after adding the edge
         mst.removeRedundantEdgeMst();  // removing the heaviest edge found in the cirle in the graph
-        System.out.println("GRAPH AFTER REMOVING '" + edgeName + "' EDGE");
+        System.out.println("GRAPH AFTER REMOVING 'Redundent' EDGE in the MST Graph");
         System.out.println(mst);    // printing the graph after the removal
 
     }
@@ -48,8 +48,12 @@ public class main {
         // ************** //  create an mst graph out of this graph using prim algorithm
 
 
-        final int numOfEdges = 7;
-        final int numOfNodes = 5;
+        final int numOfEdges = 4;
+        final int numOfNodes = 4;
+
+        System.out.println("\n**********************************************");
+        System.out.println("*******    Large Graph & MST Graph    ********");
+        System.out.println("**********************************************\n");
 
 
         //  CREATING NODES AND EDGES FOR THE LARGE GRAPH - myGraph

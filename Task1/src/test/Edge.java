@@ -26,7 +26,7 @@ public class Edge implements Comparable<Edge> {
 
     @Override
     public String toString() {
-        return "test.Edge{" +
+        return "Edge{" +
                 "nodes=" + nodes.toString() +
                 ", weight=" + weight +
                 '}';
